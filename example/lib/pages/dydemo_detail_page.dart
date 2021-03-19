@@ -14,7 +14,7 @@ class DyDetailDemoState extends State<DyDetailDemo> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(milliseconds: 500), () {
       FLDyContainerState dyState = _dyKey.currentState;
       dyState.loadJson(DetailJson);
     });

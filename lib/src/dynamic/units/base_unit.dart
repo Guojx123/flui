@@ -32,6 +32,7 @@ abstract class FLDyRenderUnit extends FLDyBaseUnit {
     return children;
   }
 
+  ///判断有无子组件
   Widget resolveChild() {
     Widget child;
     if (unitModel.align != null && unitModel.child != null)

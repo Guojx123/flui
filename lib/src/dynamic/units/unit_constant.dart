@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class FLDyNativeUnitName {
@@ -14,6 +15,7 @@ class FLDyNativeUnitName {
   static const String icon = 'Icon';
   static const String raisedButton = 'RaisedButton';
   static const String flatButton = 'FlatButton';
+  static const String pageView = 'PageView';
 }
 
 class FLDyAlignType {
@@ -77,6 +79,18 @@ class FLDyScrollPhysicsType {
   static const String clamping = 'Clamping';
   static const String alwaysScrollable = 'AlwaysScrollable';
   static const String neverScrollable = 'NeverScrollable';
+}
+
+class FLPageViewDragStartBehavior{
+  static const String down = 'Down';
+  static const String start = 'Start';
+}
+
+class FLClip{
+  static const String none = 'None';
+  static const String hardEdge = 'HardEdge';
+  static const String antiAlias = 'AntiAlias';
+  static const String antiAliasWithSaveLayer = 'AntiAliasWithSaveLayer';
 }
 
 class FLDyFontWeightType {
@@ -232,6 +246,32 @@ Alignment flStringtoAlignment(String alignment) {
       return null;
   }
 }
+
+Alignment flDragStartBehavior(String dragStartBehavior) {
+  switch (dragStartBehavior) {
+    case FLDyAlignmentType.topLeft:
+      return Alignment.topLeft;
+    case FLDyAlignmentType.topCenter:
+      return Alignment.topCenter;
+    case FLDyAlignmentType.topRight:
+      return Alignment.topRight;
+    case FLDyAlignmentType.centerLeft:
+      return Alignment.centerLeft;
+    case FLDyAlignmentType.center:
+      return Alignment.center;
+    case FLDyAlignmentType.centerRight:
+      return Alignment.centerRight;
+    case FLDyAlignmentType.bottomLeft:
+      return Alignment.bottomLeft;
+    case FLDyAlignmentType.bottomCenter:
+      return Alignment.bottomCenter;
+    case FLDyAlignmentType.bottomRight:
+      return Alignment.bottomRight;
+    default:
+      return null;
+  }
+}
+
 
 TextWidthBasis flStringToTextWidthBasis(String textWidthBasis) {
   switch (textWidthBasis) {
@@ -429,6 +469,32 @@ BorderStyle flStringToBorderStyle(String style) {
       return BorderStyle.none;
     case FLDyBorderStyleType.solid:
       return BorderStyle.solid;
+    default:
+      return null;
+  }
+}
+
+DragStartBehavior flPageViewDragStartBehavior(String pageViewDragStartBehavior){
+  switch (pageViewDragStartBehavior) {
+    case FLPageViewDragStartBehavior.down:
+      return DragStartBehavior.down;
+    case FLPageViewDragStartBehavior.start:
+      return DragStartBehavior.start;
+    default:
+      return null;
+  }
+}
+
+Clip flClip(String clip){
+  switch (clip) {
+    case FLClip.none:
+      return Clip.none;
+    case FLClip.hardEdge:
+      return Clip.hardEdge;
+    case FLClip.antiAlias:
+      return Clip.antiAlias;
+    case FLClip.antiAliasWithSaveLayer:
+      return Clip.antiAliasWithSaveLayer;
     default:
       return null;
   }

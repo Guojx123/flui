@@ -39,6 +39,8 @@ class FLDyRenderParser {
         return FLDyRaisedButtonUnit(unitModel: unitModel);
       case FLDyNativeUnitName.flatButton:
         return FLDyFlatButtonUnit(unitModel: unitModel);
+      case FLDyNativeUnitName.pageView:
+        return FLDyPageViewUnit(unitModel: unitModel);
     }
     return null;
   }

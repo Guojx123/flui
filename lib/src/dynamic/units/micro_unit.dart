@@ -190,3 +190,27 @@ class FLDyFlatButtonUnit extends FLDyRenderUnit {
     return resolveSelf(button);
   }
 }
+
+/// PageView
+class FLDyPageViewUnit extends FLDyRenderUnit {
+  FLDyPageViewUnit({FLDyFlatButtonUnitModel unitModel})
+      : assert(unitModel.runtimeType == FLDyFlatButtonUnitModel),
+        super(unitModel: unitModel);
+
+  @override
+  Widget build(BuildContext context) {
+    final FLDyFlatButtonUnitModel fbum = unitModel as FLDyFlatButtonUnitModel;
+    final Widget child = resolveChild();
+    final FlatButton button = FlatButton(
+      onPressed: () => FLDyActionDispatch.dispatcher
+          .dispatchAction(fbum.uniqueId, fbum.onPressed, context),
+      onLongPress: () => FLDyActionDispatch.dispatcher
+          .dispatchAction(fbum.uniqueId, fbum.onLongPress, context),
+      textColor: FLThemeTool.parseColor(fbum.textColor, context),
+      color: FLThemeTool.parseColor(fbum.color, context),
+      padding: fbum.padding?.toEdgeInsets(),
+      child: child,
+    );
+    return resolveSelf(button);
+  }
+}

@@ -652,6 +652,51 @@ Map<String, dynamic> _$FLDyFlatButtonUnitModelToJson(
       'padding': instance.padding,
     };
 
+FLDyPageViewUnitModel _$FLDyPageViewUnitModelFromJson(
+    Map<String, dynamic> json) {
+  return FLDyPageViewUnitModel(
+    uniqueId: json['uniqueId'] as String,
+    unitName: json['unitName'] as String,
+    children: (json['children'] as List)
+        ?.map((e) => e == null
+            ? null
+            : FLDyUnitModel.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    positioned: json['positioned'] == null
+        ? null
+        : FLDyUnitPositioned.fromJson(
+            json['positioned'] as Map<String, dynamic>),
+    scrollDirection: json['scrollDirection'] as String,
+    reverse: json['reverse'] as bool,
+    pageSnapping: json['pageSnapping'] as bool,
+    flDyDragStartBehavior: json['flDyDragStartBehavior'] == null
+        ? null
+        : FLDyDragStartBehavior.fromJson(
+            json['flDyDragStartBehavior'] as Map<String, dynamic>),
+    allowImplicitScrolling: json['allowImplicitScrolling'] as bool,
+    restorationId: json['restorationId'] as String,
+    clipBehavior: json['clipBehavior'] == null
+        ? null
+        : FLDyClip.fromJson(json['clipBehavior'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$FLDyPageViewUnitModelToJson(
+        FLDyPageViewUnitModel instance) =>
+    <String, dynamic>{
+      'uniqueId': instance.uniqueId,
+      'unitName': instance.unitName,
+      'positioned': instance.positioned,
+      'children': instance.children,
+      'scrollDirection': instance.scrollDirection,
+      'reverse': instance.reverse,
+      'pageSnapping': instance.pageSnapping,
+      'flDyDragStartBehavior': instance.flDyDragStartBehavior,
+      'allowImplicitScrolling': instance.allowImplicitScrolling,
+      'restorationId': instance.restorationId,
+      'clipBehavior': instance.clipBehavior,
+    };
+
 FLDyUnitIconData _$FLDyUnitIconDataFromJson(Map<String, dynamic> json) {
   return FLDyUnitIconData(
     json['codePoint'] as int,
@@ -957,4 +1002,27 @@ Map<String, dynamic> _$FLDyUnitPositionedToJson(FLDyUnitPositioned instance) =>
       'bottom': instance.bottom,
       'width': instance.width,
       'height': instance.height,
+    };
+
+FLDyDragStartBehavior _$FLDyDragStartBehaviorFromJson(
+    Map<String, dynamic> json) {
+  return FLDyDragStartBehavior(
+    json['dragStartBehavior'] as String,
+  );
+}
+
+Map<String, dynamic> _$FLDyDragStartBehaviorToJson(
+        FLDyDragStartBehavior instance) =>
+    <String, dynamic>{
+      'dragStartBehavior': instance.dragStartBehavior,
+    };
+
+FLDyClip _$FLDyClipFromJson(Map<String, dynamic> json) {
+  return FLDyClip(
+    json['clip'] as String,
+  );
+}
+
+Map<String, dynamic> _$FLDyClipToJson(FLDyClip instance) => <String, dynamic>{
+      'clip': instance.clip,
     };

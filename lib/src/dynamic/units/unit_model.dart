@@ -1,4 +1,5 @@
 import 'package:flui/src/common/tools.dart';
+import 'package:flutter/gestures.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:flutter/material.dart';
 import 'package:flui/src/dynamic/units/unit_constant.dart';
@@ -597,6 +598,41 @@ class FLDyFlatButtonUnitModel extends FLDyUnitModel {
 
 @JsonSerializable()
 
+/// PageView
+class FLDyPageViewUnitModel extends FLDyUnitModel {
+  FLDyPageViewUnitModel({
+    String uniqueId,
+    String unitName,
+    List<FLDyUnitModel> children,
+    FLDyUnitPositioned positioned,
+    this.scrollDirection,
+    this.reverse,
+    this.pageSnapping,
+    this.flDyDragStartBehavior,
+    this.allowImplicitScrolling,
+    this.restorationId,
+    this.clipBehavior,
+  }) : super(
+      uniqueId: uniqueId,
+      unitName: unitName,
+      children: children,
+      positioned: positioned);
+
+  final String scrollDirection;
+  final bool reverse;
+  final bool pageSnapping;
+  final FLDyDragStartBehavior flDyDragStartBehavior;
+  final bool allowImplicitScrolling;
+  final String restorationId;
+  final FLDyClip clipBehavior;
+
+  factory FLDyPageViewUnitModel.fromJson(Map<String, dynamic> json) =>
+      _$FLDyPageViewUnitModelFromJson(json);
+  Map<String, dynamic> toJson() => _$FLDyPageViewUnitModelToJson(this);
+}
+
+@JsonSerializable()
+
 /// IconData
 class FLDyUnitIconData {
   FLDyUnitIconData(this.codePoint, this.fontFamily, this.fontPackage,
@@ -994,4 +1030,38 @@ class FLDyUnitPositioned {
   factory FLDyUnitPositioned.fromJson(Map<String, dynamic> json) =>
       _$FLDyUnitPositionedFromJson(json);
   Map<String, dynamic> toJson() => _$FLDyUnitPositionedToJson(this);
+}
+
+@JsonSerializable()
+
+/// DragStartBehavior
+class FLDyDragStartBehavior{
+
+  FLDyDragStartBehavior(this.dragStartBehavior);
+
+  final String dragStartBehavior;
+
+  factory FLDyDragStartBehavior.fromJson(Map<String, dynamic> json) =>
+      _$FLDyDragStartBehaviorFromJson(json);
+  Map<String, dynamic> toJson() => _$FLDyDragStartBehaviorToJson(this);
+
+  DragStartBehavior getDragStartBehavior() => flPageViewDragStartBehavior(dragStartBehavior);
+
+}
+
+@JsonSerializable()
+
+/// Clip
+class FLDyClip{
+
+  FLDyClip(this.clip);
+
+  final String clip;
+
+  factory FLDyClip.fromJson(Map<String, dynamic> json) =>
+      _$FLDyClipFromJson(json);
+  Map<String, dynamic> toJson() => _$FLDyClipToJson(this);
+
+  Clip getClip() => flClip(clip);
+
 }

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flui/src/common/json_strings.dart';
 import 'package:flui/src/dynamic/util/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flui/src/dynamic/render_parser.dart';
@@ -47,7 +48,11 @@ class FLDyContainerState extends State<FLDyContainer> {
     assert(debugJsonAndType(jsonObj));
     // convert json string to unit model
     if (jsonObj is String) {
-      jsonObj = json.decode(jsonObj);
+      print("json is String");
+      if (jsonObj != '')
+        jsonObj = json.decode(jsonObj);
+      else
+        jsonObj = ErrorJson;
     } else if (jsonObj is FLDyUnitModel) {
       return jsonObj;
     }

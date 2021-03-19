@@ -1,3 +1,4 @@
+import 'pages/banner_page.dart';
 import 'pages/dyalign_page.dart';
 import 'pages/dycontainer_page.dart';
 import 'pages/dylistview_page.dart';
@@ -55,6 +56,11 @@ class _DynamicPageState extends State<DynamicPage> {
             title: 'List View',
             onTap: () => Navigator.pushNamed(
                 context, DyListPage.routeName)
+        ),
+        FLStaticItemData(
+            title: 'Banner',
+            onTap: () => Navigator.pushNamed(
+                context, BannerPage.routeName)
         ),
       ]),
       FLStaticSectionData(headerTitle: 'Demo', itemList: [

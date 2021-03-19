@@ -21,9 +21,11 @@ abstract class FLDyRenderUnit extends FLDyBaseUnit {
   Widget build(BuildContext context) => null;
 
   // mark up single unit
+  /// 生成简单单元
   Widget markupUnit(FLDyUnitModel unitModel) =>
       FLDyRenderParser.parseUnitModel(unitModel);
   // mark up unit list
+  /// 生成单元列表
   List<Widget> markupUnits(List<FLDyUnitModel> unitModels) {
     List<Widget> children = [];
     unitModels.forEach((FLDyUnitModel unitModel) {
@@ -44,6 +46,7 @@ abstract class FLDyRenderUnit extends FLDyBaseUnit {
   }
 
   // resolve child with align
+  ///判断有无对齐子组件
   Widget resolveAlignChild(FLDyUnitAlign align, FLDyUnitModel childModel) {
     assert(align != null);
     assert(childModel != null);
@@ -55,6 +58,7 @@ abstract class FLDyRenderUnit extends FLDyBaseUnit {
   }
 
   // resolve children with align
+  ///判断有无对齐子组件列表
   Widget resolveAlignChildren(
       FLDyUnitAlign align, List<FLDyUnitModel> childModels) {
     assert(align != null);
@@ -66,6 +70,7 @@ abstract class FLDyRenderUnit extends FLDyBaseUnit {
     );
   }
 
+  /// 处理自身小部件
   Widget resolveSelf(Widget self) {
     // flex
     if (unitModel.flex != null) {

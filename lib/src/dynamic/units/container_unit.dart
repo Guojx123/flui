@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flui/src/dynamic/units/unit_model.dart';
 import 'package:flui/src/dynamic/units/base_unit.dart';
@@ -121,6 +122,31 @@ class FLDyListViewUnit extends FLDyRenderUnit {
       );
     }
     return resolveSelf(listView);
+  }
+}
+
+/// PageView unit widget
+class FLDyPageViewUnit extends FLDyRenderUnit {
+  FLDyPageViewUnit({FLDyPageViewUnitModel unitModel})
+      : assert(unitModel.runtimeType == FLDyPageViewUnitModel),
+        super(unitModel: unitModel);
+
+  @override
+  Widget build(BuildContext context) {
+    final FLDyPageViewUnitModel fpv = unitModel as FLDyPageViewUnitModel;
+    final List<Widget> children = markupUnits(fpv.children);
+    PageView pageView;
+    pageView = PageView(
+      scrollDirection: fpv.getScrollDirection(),
+      reverse: fpv.reverse ?? false,
+      pageSnapping: fpv.pageSnapping ?? true,
+      dragStartBehavior: fpv.getDragStartBehavior(),
+      allowImplicitScrolling: fpv.allowImplicitScrolling ?? false,
+      restorationId: fpv.restorationId,
+      clipBehavior: fpv.getClip(),
+      children: children,
+      );
+    return resolveSelf(pageView);
   }
 }
 

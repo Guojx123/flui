@@ -58,6 +58,8 @@ class FLDyUnitModel {
         return FLDyRaisedButtonUnitModel.fromJson(json);
       case FLDyNativeUnitName.flatButton:
         return FLDyFlatButtonUnitModel.fromJson(json);
+      case FLDyNativeUnitName.pageView:
+        return FLDyPageViewUnitModel.fromJson(json);
     }
     return _$FLDyUnitModelFromJson(json);
   }
@@ -267,6 +269,8 @@ class FLDyListTileUnitModel extends FLDyUnitModel {
   factory FLDyListTileUnitModel.fromJson(Map<String, dynamic> json) =>
       _$FLDyListTileUnitModelFromJson(json);
   Map<String, dynamic> toJson() => _$FLDyListTileUnitModelToJson(this);
+
+
 }
 
 @JsonSerializable()
@@ -621,14 +625,24 @@ class FLDyPageViewUnitModel extends FLDyUnitModel {
   final String scrollDirection;
   final bool reverse;
   final bool pageSnapping;
-  final FLDyDragStartBehavior flDyDragStartBehavior;
+  final String flDyDragStartBehavior;
   final bool allowImplicitScrolling;
   final String restorationId;
-  final FLDyClip clipBehavior;
+  final String clipBehavior;
 
   factory FLDyPageViewUnitModel.fromJson(Map<String, dynamic> json) =>
       _$FLDyPageViewUnitModelFromJson(json);
   Map<String, dynamic> toJson() => _$FLDyPageViewUnitModelToJson(this);
+
+  Axis getScrollDirection() => (scrollDirection != null)
+      ? flStringToAxis(scrollDirection)
+      : Axis.vertical;
+
+  DragStartBehavior getDragStartBehavior() => (flDyDragStartBehavior != null)
+      ? flPageViewDragStartBehavior(flDyDragStartBehavior): DragStartBehavior.start;
+
+  Clip getClip() => (clipBehavior != null)
+      ? flClip(clipBehavior) : Clip.hardEdge;
 }
 
 @JsonSerializable()

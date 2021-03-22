@@ -669,15 +669,10 @@ FLDyPageViewUnitModel _$FLDyPageViewUnitModelFromJson(
     scrollDirection: json['scrollDirection'] as String,
     reverse: json['reverse'] as bool,
     pageSnapping: json['pageSnapping'] as bool,
-    flDyDragStartBehavior: json['flDyDragStartBehavior'] == null
-        ? null
-        : FLDyDragStartBehavior.fromJson(
-            json['flDyDragStartBehavior'] as Map<String, dynamic>),
+    flDyDragStartBehavior: json['flDyDragStartBehavior'] as String,
     allowImplicitScrolling: json['allowImplicitScrolling'] as bool,
     restorationId: json['restorationId'] as String,
-    clipBehavior: json['clipBehavior'] == null
-        ? null
-        : FLDyClip.fromJson(json['clipBehavior'] as Map<String, dynamic>),
+    clipBehavior: json['clipBehavior'] as String,
   );
 }
 

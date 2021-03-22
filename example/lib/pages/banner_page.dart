@@ -15,7 +15,7 @@ class _BannerPageState extends State<BannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('List View'),
+        title: Text('Banner View'),
       ),
       body: FLDyContainer(
         jsonObject: BannerJson,

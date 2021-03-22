@@ -1465,5 +1465,28 @@ const DetailJson =
   ''';
 
 const BannerJson =
-  '''''';
+  '''
+  {
+  "unitName":"PageView",
+  "scrollDirection":"horizontal",
+    "children":[
+            {
+                "unitName":"Image",
+                "fit":"scaleDown",
+                "imageProvider":{
+                    "type":"assets",
+                    "assetName":"assets/poster.png"
+                }
+            },
+            {
+                "unitName":"Image",
+                "fit":"scaleDown",
+                "imageProvider":{
+                    "type":"network",
+                    "url":"https://cdnimg.doutian.me/20210318/75641616082333081?imageMogr2/auto-orient"
+                }
+            }
+        ]
+  }
+  ''';
 

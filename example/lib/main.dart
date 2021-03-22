@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:example/pages/banner_page.dart';
+import 'package:example/pages/dypageview_page.dart';
 
 import 'pages/dycontainer_page.dart';
 import 'pages/dyrich_text_page.dart';
@@ -166,7 +166,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           DyImagePage.routeName: (context) => DyImagePage(),
           DyHomeDemo.routeName: (context) => DyHomeDemo(),
           DyDetailDemo.routeName: (context) => DyDetailDemo(),
-          BannerPage.routeName: (context) => BannerPage(),
+          DyPageView.routeName: (context) => PageView(),
         },
         builder: (BuildContext context, Widget child) {
           return FLToastProvider(

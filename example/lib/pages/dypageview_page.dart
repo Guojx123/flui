@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 import '../json_strings.dart';
 
-class BannerPage extends StatefulWidget {
+class DyPageView extends StatefulWidget {
   static const String routeName = '/dyBanner';
 
   @override
-  _BannerPageState createState() => _BannerPageState();
+  _DyPageViewState createState() => _DyPageViewState();
 }
 
-class _BannerPageState extends State<BannerPage> {
+class _DyPageViewState extends State<DyPageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

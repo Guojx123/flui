@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flui/src/common/json_strings.dart';
+import 'package:flui/src/common/json_string.dart';
 import 'package:flui/src/dynamic/util/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flui/src/dynamic/render_parser.dart';

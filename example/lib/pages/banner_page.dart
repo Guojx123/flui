@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../json_strings.dart';
 
 class BannerPage extends StatefulWidget {
-  static const String routeName = '/dybanner';
+  static const String routeName = '/dyBanner';
 
   @override
   _BannerPageState createState() => _BannerPageState();

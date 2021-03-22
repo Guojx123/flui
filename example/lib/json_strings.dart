@@ -1485,6 +1485,14 @@ const BannerJson =
                     "type":"network",
                     "url":"https://cdnimg.doutian.me/20210318/75641616082333081?imageMogr2/auto-orient"
                 }
+            },
+            {
+                "unitName":"Image",
+                "fit":"scaleDown",
+                "imageProvider":{
+                    "type":"network",
+                    "url":"https://cdnimg.doutian.me/20210321/20671616295746790?imageMogr2/auto-orient"
+                }
             }
         ]
   }

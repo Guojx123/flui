@@ -166,7 +166,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           DyImagePage.routeName: (context) => DyImagePage(),
           DyHomeDemo.routeName: (context) => DyHomeDemo(),
           DyDetailDemo.routeName: (context) => DyDetailDemo(),
-          DyPageView.routeName: (context) => PageView(),
+          DyPageView.routeName: (context) => DyPageView(),
         },
         builder: (BuildContext context, Widget child) {
           return FLToastProvider(
